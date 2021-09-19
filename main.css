@@ -1,0 +1,120 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: rgba(8, 7, 7, 0.87);
+}
+body::before {
+	content: '';
+	position: absolute;
+	width: 60%;
+	height: 60%;
+	background: linear-gradient(#eb5a8d, #5bee6e);
+	clip-path: polygon(
+		90% 6%,
+		71% 32%,
+		100% 79%,
+		74% 100%,
+		27% 100%,
+		0 79%,
+		31% 37%,
+		18% 6%,
+		51% 38%
+	);
+}
+
+.container {
+	position: relative;
+	background: rgba(231, 187, 187, 0.726);
+	border-radius: 6px;
+	overflow: hidden;
+	z-index: 10;
+	backdrop-filter: blur(15px);
+	box-shadow: 0px 0px 30px rgb(252, 144, 144);
+}
+.container .calculator {
+	position: relative;
+	display: grid;
+}
+
+.container .calculator .value {
+	grid-column: span 4;
+	height: 270px;
+	width: 500px;
+	text-align: right;
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 30px;
+	background: black;
+	color: white;
+}
+
+.container .calculator span {
+	display: grid;
+	place-items: center;
+	height: 75px;
+	width: 75px;
+	color: white;
+
+	font-size: 20px;
+	user-select: none;
+
+	transition: 0.5s;
+}
+.container .calculator .num:hover {
+	transition: 0s;
+	color: violet;
+	background: rgba(255, 255, 255, 0.05);
+	transform: scale(1.5);
+	background-color: rgba(219, 219, 219, 0.596);
+}
+.container .calculator span:active {
+	background: #14ff47;
+	font-size: 54px;
+	font-weight: 500;
+}
+.container .calculator .clear {
+	grid-column: span 2;
+	width: 150px;
+}
+.container .calculator .add {
+	grid-row: span 2;
+	height: 150px;
+}
+.cursor {
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	border: 1px solid rgb(236, 236, 236);
+	background: rgb(119, 255, 187);
+	border-radius: 50%;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	transition: 0.2s;
+}
+.cursor2 {
+	position: fixed;
+	width: 8px;
+	height: 8px;
+	background-color: #ba52cf;
+	border-radius: 50%;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+}
+.ans {
+	background: red;
+}
+.ans:hover {
+	background: red;
+}
